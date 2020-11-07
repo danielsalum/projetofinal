@@ -23,7 +23,7 @@ class UserController {
 
     const { id, name, email, password } = await User.create(req.body);
 
-    return res.redirect("http://localhost:8080/login");
+    return res.redirect("http://localhost:3333/login");
   }
 }
 
