@@ -59,7 +59,7 @@ class App extends React.Component {
                 maneira como você trabalha. De
                 <a>código aberto</a>
                 aos
-                <a>negócios</a>, você pode hospedar e revisar códigos, gerenciar
+                <a>negócios</a>, você pode hospedar e revisar todos os códigos, gerenciar
                 projetos e criar software junto a 50 milhões de desenvolvedores.
               </p>
             </div>
