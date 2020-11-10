@@ -33,13 +33,13 @@ class SessionController {
 
     // console.log("this is cookie", res);
 
-    return res.redirect("http://localhost:3333/files");
+    return res.redirect("https://projetofinal2.herokuapp.com/files");
   }
 
   async logout(req, res, next) {
     res.clearCookie("id");
 
-    return res.redirect("http://localhost:3333/");
+    return res.redirect("https://projetofinal2.herokuapp.com");
     next();
   }
 
@@ -53,10 +53,10 @@ class SessionController {
 
   async login(req, res, next) {
     if (req.cookies && req.cookies.id) {
-      res.redirect("http://localhost:3333/files");
+      res.redirect("https://projetofinal2.herokuapp.com/files");
       return;
     }
-    res.redirect("http://localhost:3333/login");
+    res.redirect("https://projetofinal2.herokuapp.com/login");
   }
 }
 
