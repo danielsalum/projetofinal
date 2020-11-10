@@ -16,7 +16,7 @@ class Files extends React.Component {
 
   buscaPorNome(event) {
     try {
-      Axios.get("http://localhost:3333/getFileByName", {
+      Axios.get("https://projetofinal2.herokuapp.com/getFileByName", {
         params: {
           name: event.target[0].value,
         },
@@ -35,7 +35,7 @@ class Files extends React.Component {
         {this.state.User_isAdm == "true" && this.state.UserId ? (
           <form
             class="dark"
-            action="http://localhost:3333/uploadFile"
+            action="https://projetofinal2.herokuapp.com/uploadFile"
             method="post"
             enctype="multipart/form-data"
           >
@@ -68,7 +68,7 @@ class Files extends React.Component {
               id: ${this.state.file.id}, 
               Path: ${this.state.file.path}`}
                 <img
-                  src={`http://localhost:3333/files/${this.state.file.path}`}
+                  src={`https://projetofinal2.herokuapp.com/files/${this.state.file.path}`}
                 ></img>
               </p>
             </div>
@@ -76,7 +76,7 @@ class Files extends React.Component {
         )}
         <form
           class="dark"
-          action={"http://localhost:3333/logout"}
+          action={"https://projetofinal2.herokuapp.com//logout"}
           method={"get"}
         >
           <input type="submit" value="Logout" />
@@ -84,7 +84,7 @@ class Files extends React.Component {
 
         <form
           class="dark"
-          action={"http://localhost:8080/files"}
+          action={"https://projetofinal2.herokuapp.com/files"}
           method={"get"}
         >
           <input type="submit" value="Busca completa ao banco de dados" />
