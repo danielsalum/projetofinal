@@ -38,10 +38,10 @@ class List extends React.Component {
     }
   }
 
-  /*handleSubmit = (event) => {
-     this.setState({ nameSearch: event.target.value });
-     browserHistory.push(`/repo:${event.target.name}`);
-   };*/
+  handleSubmit = (event) => {
+    this.setState({ nameSearch: event.target.value });
+    browserHistory.push(`/repo:${event.target[0].value}`);
+  };
 
   render() {
     const { githubData } = this.state;
