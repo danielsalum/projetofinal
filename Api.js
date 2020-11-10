@@ -12,7 +12,9 @@ class Api {
     this.server = express();
     this.routes();
     this.middlewares();
-
+    this.server.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
   }
 
   middlewares() {
@@ -26,9 +28,7 @@ class Api {
 
     this.server.use(express.static('client/build'));
 
-    this.server.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
+
     // this.server.use("views", "../views");
 
     this.server.use((req, res, next) => {
