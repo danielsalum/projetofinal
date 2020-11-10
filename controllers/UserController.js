@@ -19,13 +19,13 @@ class UserController {
       return res.status(400).json({ error: "Usuário já existente." });
     }
 
-    //const { id, name, email, password } = await User.create(req.body);
-    const { id, name, email, password } = await User.create({
-      name: "usuarioAdm",
-      email: "usuarioAdm",
-      password: "usuarioAdm",
-      isAdm: true,
-    });
+    const { id, name, email, password } = await User.create(req.body);
+    //const { id, name, email, password } = await User.create({
+     // name: "usuarioAdm",
+     // email: "usuarioAdm",
+     // password: "usuarioAdm",
+     // isAdm: true,
+    //});
     return res.redirect("https://projetofinal2.herokuapp.com/login");
   }
 }
