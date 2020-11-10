@@ -16,7 +16,7 @@ class Files extends React.Component {
 
   buscaPorNome(event) {
     try {
-      Axios.get("https://projetofinal2.herokuapp.com/getFileByName", {
+      Axios.get("/getFileByName", {
         params: {
           name: event.target[0].value,
         },
@@ -68,7 +68,7 @@ class Files extends React.Component {
               id: ${this.state.file.id}, 
               Path: ${this.state.file.path}`}
                 <img
-                  src={`https://projetofinal2.herokuapp.com/files/${this.state.file.path}`}
+                  src={`/files/${this.state.file.path}`}
                 ></img>
               </p>
             </div>
