@@ -1,5 +1,5 @@
 //import { where } from "sequelize";
-const where = require("sequelize");
+const {where} = require("sequelize");
 const File = require("../models/File");
 
 class FileController {
