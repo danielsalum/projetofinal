@@ -16,7 +16,7 @@ class Files extends React.Component {
 
   buscaPorNome(event) {
     try {
-      Axios.get("/getFileByName", {
+      Axios.get("https://projetofinal2.herokuapp.com/getFileByName", {
         params: {
           name: event.target[0].value,
         },
