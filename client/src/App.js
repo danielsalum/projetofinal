@@ -64,7 +64,7 @@ class App extends React.Component {
               </p>
             </div>
             <div class="login">
-              <form action={"/users"} method={"post"}>
+              <form action={"https://projetofinal2.herokuapp.com/users"} method={"post"}>
                 <div class="telaLogin">
                   <div class="rotulo">
                     <label>Usuário</label>

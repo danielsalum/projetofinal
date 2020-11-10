@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken")
 const { promisify } = require("util")
-
 // transforma um callback em função async await
 
 const authConfig = require("../config/auth")
