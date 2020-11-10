@@ -51,7 +51,7 @@ class Files extends React.Component {
         {this.state.User_isAdm == "true" && this.state.UserId ? (
           <form
             class="dark"
-            action="/uploadFile"
+            action="https://projetofinal2.herokuapp.com/uploadFile"
             method="post"
             enctype="multipart/form-data"
           >
