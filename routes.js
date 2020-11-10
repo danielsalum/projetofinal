@@ -12,7 +12,7 @@ const upload = multer(multerConfig);
 routes.post("/users", UserController.store);
 routes.post("/sessions", SessionController.store);
 routes.get("/getUser", SessionController.getUser);
-routes.get("/login", SessionController.login);
+routes.get("/checklogin", SessionController.login);
 routes.get("/logout", SessionController.logout);
 routes.post("/uploadFile", upload.single("file"), FileController.store);
 routes.get("/getFiles", FileController.get);
