@@ -14,38 +14,9 @@ class Files extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.initialize();
-  }
-
-  initialize = () => {
-    // try {
-    //   Axios.get("http://localhost:3333/getUser", {
-    //     params: {
-    //       id: this.state.UserId,
-    //     },
-    //   }).then((res) => this.setState({ User: res }));
-    // } catch (err) {
-    //   console.log(err);
-    // }
-    console.log(this.state.UserId);
-    console.log(this.state.User_isAdm);
-  };
-  onSubmit(event) {
-    try {
-      Axios.get("https://projetofinal2.herokuapp.com/getFiles").then((res) =>
-        this.setState({ files: res.data })
-      );
-      console.log(this.state.files);
-    } catch (err) {
-      return err;
-    }
-    event.preventDefault();
-  }
-
   buscaPorNome(event) {
     try {
-      Axios.get("https://projetofinal2.herokuapp.com/getFileByName", {
+      Axios.get("http://localhost:3333/getFileByName", {
         params: {
           name: event.target[0].value,
         },
@@ -64,7 +35,7 @@ class Files extends React.Component {
         {this.state.User_isAdm == "true" && this.state.UserId ? (
           <form
             class="dark"
-            action="https://projetofinal2.herokuapp.com/uploadFile"
+            action="http://localhost:3333/uploadFile"
             method="post"
             enctype="multipart/form-data"
           >
@@ -76,8 +47,9 @@ class Files extends React.Component {
         ) : null}
         {this.state.UserId ? (
           <div>
-            <form class="dark" onSubmit={this.onSubmit.bind(this)}>
-              <label> Busca de arquivos -- </label>
+            <form class="dark" onSubmit={this.buscaPorNome.bind(this)}>
+              <label> Busca de arquivos por nome -- </label>
+              <input type="text" id={"name"} />
               <input type="submit" value="Buscar" />
             </form>
           </div>
@@ -88,23 +60,23 @@ class Files extends React.Component {
             </div>
           </div>
         )}
-        {this.state.files &&
-          this.state.UserId &&
-          this.state.files.map((file) => (
-            <div className="row">
-              <div className="col-md-12">
-                <p>
-                  {`nome: ${file.name}, 
-              id: ${file.id}, 
-              Path: ${file.path}`}
-                  <img src={`https://projetofinal2.herokuapp.com/files/${file.path}`}></img>
-                </p>
-              </div>
+        {this.state.file !== "{}" && (
+          <div className="row">
+            <div className="col-md-12">
+              <p>
+                {`nome: ${this.state.file.name}, 
+              id: ${this.state.file.id}, 
+              Path: ${this.state.file.path}`}
+                <img
+                  src={`http://localhost:3333/files/${this.state.file.path}`}
+                ></img>
+              </p>
             </div>
-          ))}
+          </div>
+        )}
         <form
           class="dark"
-          action={"https://projetofinal2.herokuapp.com/logout"}
+          action={"http://localhost:3333/logout"}
           method={"get"}
         >
           <input type="submit" value="Logout" />
@@ -112,10 +84,10 @@ class Files extends React.Component {
 
         <form
           class="dark"
-          action={"https://projetofinal2.herokuapp.com/filesbyname"}
+          action={"http://localhost:8080/files"}
           method={"get"}
         >
-          <input type="submit" value="Pesquisar por nome" />
+          <input type="submit" value="Busca completa ao banco de dados" />
         </form>
       </div>
     );

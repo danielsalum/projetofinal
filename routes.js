@@ -16,11 +16,7 @@ routes.get("/login", SessionController.login);
 routes.get("/logout", SessionController.logout);
 routes.post("/uploadFile", upload.single("file"), FileController.store);
 routes.get("/getFiles", FileController.get);
-
-routes.get("/test", (req,res) => {
-  return res.send({Hello: true})
-});
-
+routes.get("/getFileByName", FileController.getFileByName);
 
 // routes.use(authMiddleware);
 routes.get("/find");
