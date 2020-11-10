@@ -10,8 +10,8 @@ require("./database");
 class Api {
   constructor() {
     this.server = express();
-    this.routes();
     this.middlewares();
+    this.routes();
     this.server.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
