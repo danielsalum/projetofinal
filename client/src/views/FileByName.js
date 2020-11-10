@@ -76,7 +76,7 @@ class Files extends React.Component {
         )}
         <form
           class="dark"
-          action={"https://projetofinal2.herokuapp.com//logout"}
+          action={"https://projetofinal2.herokuapp.com/logout"}
           method={"get"}
         >
           <input type="submit" value="Logout" />
