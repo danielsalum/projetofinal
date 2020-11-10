@@ -35,7 +35,7 @@ class Files extends React.Component {
         {this.state.User_isAdm == "true" && this.state.UserId ? (
           <form
             class="dark"
-            action="https://projetofinal2.herokuapp.com/uploadFile"
+            action="/uploadFile"
             method="post"
             enctype="multipart/form-data"
           >
@@ -76,7 +76,7 @@ class Files extends React.Component {
         )}
         <form
           class="dark"
-          action={"https://projetofinal2.herokuapp.com/logout"}
+          action={"/logout"}
           method={"get"}
         >
           <input type="submit" value="Logout" />
@@ -84,7 +84,7 @@ class Files extends React.Component {
 
         <form
           class="dark"
-          action={"https://projetofinal2.herokuapp.com/files"}
+          action={"/files"}
           method={"get"}
         >
           <input type="submit" value="Busca completa ao banco de dados" />
